@@ -5,6 +5,11 @@ configure
 config/install-sh
 config/missing
 aclocal.m4
+autom4te.cache/
+.version
+.tarball-version
+config.status
+config.log
 
 # auto-generated scripts
 input
