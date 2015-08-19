@@ -1,0 +1,11 @@
+
+Makefile
+Makefile.in
+configure
+config/install-sh
+config/missing
+aclocal.m4
+
+# auto-generated scripts
+input
+other
