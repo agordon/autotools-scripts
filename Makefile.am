@@ -5,6 +5,9 @@ BUILT_SOURCES = $(top_srcdir)/.version
 
 # Scripts which will be installed in
 # /usr/local/bin (or other location with --prefix)
+#
+# NOTE: this script is generated from 'input.sh'
+#       by running ./configure.
 bin_SCRIPTS = \
 	input
 
