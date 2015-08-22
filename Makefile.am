@@ -1,3 +1,7 @@
+# autotools-scripts: Template project of autotools for scripts
+# copyright (C) Assaf Gordon <assafgordon@gmail.com>
+# License: MIT
+# See: https://github.com/autotools-scripts
 
 EXTRA_DIST = $(top_srcdir)/.version
 
@@ -6,8 +10,7 @@ BUILT_SOURCES = $(top_srcdir)/.version
 # Scripts which will be installed in
 # /usr/local/bin (or other location with --prefix)
 #
-# NOTE: this script is generated from 'input.sh'
-#       by running ./configure.
+# NOTE: this script is generated from 'input.sh' by running ./configure.
 bin_SCRIPTS = \
 	input
 

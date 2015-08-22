@@ -1,3 +1,7 @@
+# autotools-scripts: Template project of autotools for scripts
+# copyright (C) Assaf Gordon <assafgordon@gmail.com>
+# License: MIT
+# See: https://github.com/autotools-scripts
 
 Makefile
 Makefile.in
