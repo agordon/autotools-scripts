@@ -32,6 +32,10 @@ pkgexeclibdir="@libexecdir@/@PACKAGE@" # /usr/local/libexec/PACKAGE
 # This variable is explictly substituted in 'configure.ac'
 DATADIR='@DATADIR@'
 
+# This variable is defined in 'configure.ac',
+# enabled with './configure --enable-foobar'.
+foobar='@foobar@'
+
 # Example files are expected to be installed here
 # (see Makefile.am for corresponding installation)
 exampledir="$pkgdatadir/examples"
@@ -40,3 +44,9 @@ datafile="$exampledir/data.txt"
 
 echo "Hello from version $VERSION"
 echo "example file = $datafile"
+
+if test "x$foobar" = xtrue ; then
+    echo "Foobar is Enabled"
+else
+    echo "Skipping Foobar (disabled in ./configure)"
+fi
