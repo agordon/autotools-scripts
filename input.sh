@@ -12,9 +12,6 @@
 # Variables defined in configure.ac
 VERSION='@VERSION@'
 PACKAGE_NAME='@PACKAGE_NAME@'
-PACKAGE_TARNAME='@PACKAGE_TARNAME@'
-PACKAGE_VERSION='@PACKAGE_VERSION@'
-PACKAGE_STRING='@PACKAGE_STRING@'
 PACKAGE_BUGREPORT='@PACKAGE_BUGREPORT@'
 PACKAGE_URL='@PACKAGE_URL@'
 PACKAGE='@PACKAGE@'
@@ -43,15 +40,78 @@ foobar='@foobar@'
 
 # Example files are expected to be installed here
 # (see Makefile.am for corresponding installation)
-exampledir="$pkgdatadir/examples"
+exampledir="$DATADIR/examples"
 
 datafile="$exampledir/data.txt"
 
-echo "Hello from version $VERSION"
-echo "example file = $datafile"
+die()
+{
+    BASE=$(basename "$0")
+    echo "$BASE: error: $@" >&2
+    exit 1
+}
 
+show_version_and_exit()
+{
+    echo "@PACKAGE_NAME@ - @VERSION@"
+    echo "License: MIT"
+    exit 0
+}
+
+show_help_and_exit()
+{
+    BASE=$(basename "$0")
+    echo "@PACKAGE_NAME@ - Autotools+Scripts Demo program
+
+Usage: $BASE [OPTIONS] FILE ...
+
+FILE - File to process (in this demo, just print the file name)
+
+Options:
+    -h        = This help screen.
+    -v        = be verbose
+    -V        = print version.
+
+Website: @PACKAGE_URL@
+bug-reports/questions: @PACKAGE_BUGREPORT@
+
+"
+
+    exit
+}
+
+# Default values for parameters
+show_usage=
+show_version=
+verbose=
+# Parse parameters
+while getopts Vvh param
+do
+    case $param in
+    h)   show_help=1;;
+    v)   verbose=1;;
+    V)   show_version=1;;
+    ?)   die "unknown command line option";;
+    esac
+done
+shift $(($OPTIND - 1))
+
+# Validate parameters
+test -n "$show_help" && show_help_and_exit
+test -n "$show_version" && show_version_and_exit
+test -z "$1" && die "missing file name. See -h for help"
+
+# This is set during './configure' with --enable-foobar
 if test "x$foobar" = xtrue ; then
     echo "Foobar is Enabled"
 else
     echo "Skipping Foobar (disabled in ./configure)"
 fi
+
+## Process each file
+while test $# -gt 0 ; do
+    filename="$1"
+    shift 1
+
+    echo "processing file '$filename'..."
+done
