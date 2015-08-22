@@ -16,5 +16,7 @@ config.status
 config.log
 
 # auto-generated scripts
-input
-other
+autotools-script-demo
+
+# Tarballs
+autotools-scripts-*.tar.gz

@@ -10,9 +10,10 @@ BUILT_SOURCES = $(top_srcdir)/.version
 # Scripts which will be installed in
 # /usr/local/bin (or other location with --prefix)
 #
-# NOTE: this script is generated from 'input.sh' by running ./configure.
+# NOTE: this script is generated from 'autotools-script-demo.sh.sh'
+#       by running ./configure.
 bin_SCRIPTS = \
-	input
+	autotools-script-demo
 
 # files to install in /usr/local/share/PACKAGE/examples
 examplesdir = $(pkgdatadir)/examples

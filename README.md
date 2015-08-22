@@ -10,11 +10,11 @@ The autotools build systems enables the following:
     # required if checked out from git
     ./bootstrap
 
-    # generate the scripts ('input' from 'input.sh'),
-    # with the custom PATH and option (foobar)
+    # generate the script 'autotools-script-demo' from
+    # 'autotools-script-demo.sh' with the custom PATH and option (foobar)
     ./configure --prefix /tmp/demo --enable-foobar
 
-    # install the script in /tmp/demo/bin/input ,
+    # install the script in /tmp/demo/bin/,
     # and the data file in /tmp/demo/share/autotools-scripts/examples/ .
     make install
 
@@ -46,5 +46,7 @@ Which will install the script to `/usr/local/bin` and the data file to
 ## More information
 
 contact: Assaf Gordon (assafgordon@gmail.com)
+
 License: MIT (support script `git-version-gen` is GPLv3+)
+
 Website: https://github.com/agordon/autotools-scripts

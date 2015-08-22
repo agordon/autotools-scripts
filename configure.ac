@@ -58,7 +58,7 @@ AC_SUBST([DATADIR])
 
 AC_CONFIG_FILES( [
 		  Makefile
-          input:input.sh
+          autotools-script-demo:autotools-script-demo.sh
 		  ] )
 
 AC_OUTPUT()
